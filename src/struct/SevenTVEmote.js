@@ -32,7 +32,7 @@ class SevenTVEmote extends Emote {
          * The name of the emote creator's channel.
          * @type {string}
          */
-        this.ownerName = data.owner.display_name;
+        this.ownerName = data.owner?.display_name || 'UNKNOWN';
 
         /**
          * Available image sizes.
