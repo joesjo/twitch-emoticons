@@ -258,7 +258,11 @@ class EmoteFetcher {
                 this._cacheBTTVEmote(channel, data);
             }
 
-            return this.channels.get(channel).emotes.filter(e => e.type === 'bttv');
+            if (this.channels.has(channel)) {
+                return this.channels.get(channel).emotes.filter(e => e.type === 'bttv');
+            } else {
+                return [];
+            }
         });
     }
 
